@@ -12,7 +12,7 @@ export default function App() {
     <div>
       <h1>Hello React</h1>
       <p>{counter}</p>
-      <FancyButton buttonText="Increment" incrementCounter={displayCounter}/>
+      <FancyButton buttonIncrementText="Increment" buttonDecrmentText="Decrement" updateCounter={displayCounter}/>
     </div>
   );
 }

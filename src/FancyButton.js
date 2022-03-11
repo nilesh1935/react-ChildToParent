@@ -6,15 +6,25 @@ const FancyButton = (props) => {
 const [counter, setCounter] = useState(0);
 
  return (
- <button onClick={()=>{
+   <>
+   <button onClick={()=>{
     setCounter(counter+1);
-    props.incrementCounter(counter + 1)
-  }}>{props.buttonText}</button>)
+    props.updateCounter(counter + 1)
+  }}>{props.buttonIncrementText}</button>
+
+<button onClick={()=>{
+    setCounter(counter-1);
+    props.updateCounter(counter)
+  }}>{props.buttonDecrmentText}</button>
+  
+   </>
+ )
 }
 
 FancyButton.propTypes = {
-  buttonText : PropTypes.string,
-  incrementCounter : PropTypes.func
+  buttonIncrementText : PropTypes.string,
+  buttonDecrmentText : PropTypes.string,
+  updateCounter : PropTypes.func
 }
 
 export default FancyButton
