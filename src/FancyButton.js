@@ -1,15 +1,20 @@
 import React, {useState} from "react";
+import PropTypes from 'prop-types';
 
 
-const FancyButton = ({name, incrementCounter}) => {
+const FancyButton = (props) => {
 const [counter, setCounter] = useState(0);
 
  return (
  <button onClick={()=>{
     setCounter(counter+1);
-    incrementCounter(counter +1)
-  }}>{name}</button>)
+    props.incrementCounter(counter + 1)
+  }}>{props.buttonText}</button>)
 }
 
+FancyButton.propTypes = {
+  buttonText : PropTypes.string,
+  incrementCounter : PropTypes.func
+}
 
 export default FancyButton
